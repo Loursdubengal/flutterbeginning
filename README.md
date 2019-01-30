@@ -6,14 +6,18 @@ FlutterBegining
 
 My first project in Flutter to test the language and find a clean architecture.
 
-lib/
-|- main.dart
-|- routes.dart
-|- screens/
-|- util/
-|- widgets/
-|- data/
-|- services/
+The app consist to have a list of the activities you can do in your day and you have to select which you want to do.
+
+Underscore "_" means that class or variables are privates
+
+*lib/
+- [x] |- main.dart
+- [ ] |- routes.dart (routes are still in main for the moment)
+- [x] |- screens/
+- [ ] |- util/ (not necessary until now)
+- [ ] |- widgets/
+- [ ] |- data/
+- [ ] |- services/
 
 
   1. **screens:** Contains the screens of your application. All files from here get imported into routes.dart

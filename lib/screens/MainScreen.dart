@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MainScreen extends State<MainScreenState> {
+class _MainScreen extends State<MainScreenState> {
   List<String> _activities = ["Dormir", "Manger", "Vaisselles", "Coder", "Chiner", "Ranger"];
   Set<String> _savedActivities;
 
-  MainScreen(Set<String> _savedActivities){
+  _MainScreen(Set<String> _savedActivities){
     this._savedActivities = _savedActivities;
   }
 
@@ -110,5 +110,5 @@ class MainScreenState extends StatefulWidget {
   }
 
   @override
-  MainScreen createState() => new MainScreen(_savedActivities);
+  _MainScreen createState() => new _MainScreen(_savedActivities);
 }
