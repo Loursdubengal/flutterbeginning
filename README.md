@@ -1,4 +1,4 @@
-# flutter_app
+# First flutter app
 
 FlutterBegining
 
@@ -16,7 +16,7 @@ lib/
 |- services/
 
 
-screens:Contains the screens of your application. All files from here get imported into routes.dart
-util:Contains the utilities/common functions of your application
-widgets:Contains the common widgets for your applications. For example, Button , TextField etc.
-routes.dart:Contains the routes of your application and imports all screens.
+  1. **screens:** Contains the screens of your application. All files from here get imported into routes.dart
+  2. **util:** Contains the utilities/common functions of your application
+  3. **widgets:** Contains the common widgets for your applications. For example, Button , TextField etc.
+  4. **routes.dart:** Contains the routes of your application and imports all screens.
