@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class _MainScreen extends State<MainScreenState> {
-  List<String> _activities = ["Dormir", "Manger", "Vaisselles", "Coder", "Chiner", "Ranger"];
+import 'package:flutter_app/controllers/controllersStates/ActivitiesControllerState.dart';
+
+class ActivitiesView extends ActivitiesControllerState {
+  final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
   Set<String> _savedActivities;
 
-  _MainScreen(Set<String> _savedActivities){
-    this._savedActivities = _savedActivities;
+  ActivitiesView(Set<String> savedActivities) : super(savedActivities){
+    _savedActivities = savedActivities;
   }
 
-  final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
   @override
   Widget build(BuildContext context) {
     String _activityIdInput = "";
@@ -16,7 +17,7 @@ class _MainScreen extends State<MainScreenState> {
         appBar: AppBar(
           title: Text('Activités de la journée'),
           actions: <Widget>[
-            new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
+            new IconButton(icon: const Icon(Icons.list), onPressed: pushSaved),
           ],
         ),
         body: _buildSuggestions(),
@@ -46,7 +47,7 @@ class _MainScreen extends State<MainScreenState> {
                       ),
                       FlatButton(
                         child: new Text("Add"),
-                        onPressed:() => _addActivity(_activityIdInput, context),
+                        onPressed:() => addActivity(_activityIdInput, context),
                       )
                     ],
                   )
@@ -57,24 +58,12 @@ class _MainScreen extends State<MainScreenState> {
     );
   }
 
-  void _pushSaved() {
-    Navigator.of(context).pushNamed('/dayActivitiesScreen');
-  }
-
-  void _addActivity(String activity, BuildContext context){
-      setState((){
-        _activities = List.from(_activities)
-          ..add(activity);
-      });
-      Navigator.pop(context);
-  }
-
   Widget _buildSuggestions() {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0), /*margin on each side*/
-        itemCount: _activities.length,
+        itemCount: activities.length,
         itemBuilder: /*1*/ (context, i) {
-          return _buildRow(_activities[i]);
+          return _buildRow(activities[i]);
         });
   }
 
@@ -100,15 +89,4 @@ class _MainScreen extends State<MainScreenState> {
       },
     );
   }
-}
-
-class MainScreenState extends StatefulWidget {
-  Set<String> _savedActivities;
-
-  MainScreenState(Set<String> _savedActivities){
-    this._savedActivities = _savedActivities;
-  }
-
-  @override
-  _MainScreen createState() => new _MainScreen(_savedActivities);
 }

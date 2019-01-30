@@ -13,13 +13,19 @@ Underscore "_" means that class or variables are privates
 ### Project structure
 
 lib/
-- [x] |- main.dart
-- [ ] |- routes.dart (routes are still in main for the moment)
-- [x] |- screens/
-- [ ] |- util/ (not necessary until now)
-- [ ] |- widgets/
-- [ ] |- data/
-- [ ] |- services/
+- [x] |- controllers/
+- [x] |- controllers/States (abstact classes of controllers with methods and states management)
+- [x] |- mainController (routes and common stuff between pages)
+
+- [ ] |- models/
+- [ ] |- Activity (model)
+
+- [ ] |- views/ (got widgets of view and communicate with the state controler
+
+
+- [x] |- main.dart (only the app launcher)
+
+
 
 1. **screens:** Contains the screens of your application. All files from here get imported into routes.dart
 2. **util:** Contains the utilities/common functions of your application

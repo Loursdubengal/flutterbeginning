@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DayActivitiesScreen extends StatelessWidget {
+import 'package:flutter_app/controllers/controllersStates/DayActivitiesControllerState.dart';
+
+class DayActivitiesView extends DayActivitiesControllerState {
   Set<String> _savedActivities;
 
-  DayActivitiesScreen(Set<String> _savedActivities){
-    this._savedActivities = _savedActivities;
+  DayActivitiesView(Set<String> savedActivities): super(savedActivities){
+    this._savedActivities = savedActivities;
   }
 
   @override
